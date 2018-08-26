@@ -1,0 +1,9 @@
+product:
+- name: "apple"
+  price: 2.5
+  unit: "pound"
+  description: "This apple come from China"
+- name: "computer"
+  price: 12000
+  unit: "one"
+  description: "MI"

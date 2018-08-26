@@ -8,10 +8,8 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath "org.springframework.cloud:spring-cloud-contract-gradle-plugin:2.0.2.BUILD-SNAPSHOT"
-//        classpath "com.jayway.restassured:rest-assured:2.5.0"
-//        classpath "com.jayway.restassured:spring-mock-mvc:2.5.0"
-	}
+        classpath("org.springframework.cloud:spring-cloud-contract-gradle-plugin:2.0.2.BUILD-SNAPSHOT")
+    }
 }
 
 apply plugin: 'java'
@@ -36,11 +34,17 @@ ext {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.flywaydb:flyway-core')
+    compile('org.dbunit:dbunit:2.5.0')
+
+    compileOnly('org.projectlombok:lombok')
+
+    runtime('mysql:mysql-connector-java')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.cloud:spring-cloud-starter-contract-verifier')
-    testCompile('com.github.database-rider:rider-core:1.2.11')
-//    testCompile "com.jayway.restassured:rest-assured:2.5.0"
-//    testCompile "com.jayway.restassured:spring-mock-mvc:2.5.0"
+    testCompile('com.github.database-rider:rider-spring:1.2.11')
 }
 
 contracts {

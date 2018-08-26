@@ -1,0 +1,12 @@
+name: "should_return_one_product_given_product_id"
+request:
+  method: GET
+  url: "/product/1"
+response:
+  status: 200
+  body:
+    id: 1
+    name: "apple"
+    price: 2.5
+    unit: "pound"
+    description: "This apple come from China"

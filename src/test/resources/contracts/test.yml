@@ -1,6 +1,0 @@
-name: "yml_test"
-request:
-  method: GET
-  url: "/hello"
-response:
-  status: 200
